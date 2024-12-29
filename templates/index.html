@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Scraper</title>
+</head>
+
+<body>
+    <h1>Google Maps Scraper</h1>
+    <form method="POST">
+        <label for="query">Enter a search term:</label>
+        <input type="text" id="query" name="query" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if extracted_data %}
+    <h3>Extracted Search Term:</h3>
+    <p>{{ extracted_data }}</p>
+    {% endif %}
+
+    {% if search_results %}
+    <h3>Search Results:</h3>
+    <pre>{{ search_results }}</pre>
+    {% endif %}
+</body>
+
+</html>
