@@ -9,10 +9,12 @@
 
 <body>
     <h1>Google Maps Scraper</h1>
+
+    <!-- Search Term Form -->
     <form method="POST">
         <label for="query">Enter a search term:</label>
         <input type="text" id="query" name="query" required>
-        <button type="submit">Search</button>
+        <button type="submit" name="search">Search</button>
     </form>
 
     {% if extracted_data %}
@@ -23,6 +25,19 @@
     {% if search_results %}
     <h3>Search Results:</h3>
     <pre>{{ search_results }}</pre>
+    {% endif %}
+
+    <!-- Ask Question Section -->
+    <h2>Ask a Question</h2>
+    <form method="POST">
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question" required>
+        <button type="submit" name="ask_question">Ask</button>
+    </form>
+
+    {% if ai_response %}
+    <h3>AI Response:</h3>
+    <pre>{{ ai_response }}</pre>
     {% endif %}
 </body>
 
